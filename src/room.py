@@ -5,6 +5,7 @@ class Room:
         self._guests = []
         self._songs = []
         self.ENTRY_FEE = entry
+        self.running_total = 0
 
     def get_guest(self, number):
         return self._guests[number]
@@ -13,6 +14,7 @@ class Room:
         if len(self._guests) < self.CAPACITY and guest.money >= self.ENTRY_FEE:
             self._guests.append(guest)
             guest.money -= self.ENTRY_FEE
+            self.running_total += self.ENTRY_FEE
             return True
         else:
             return False

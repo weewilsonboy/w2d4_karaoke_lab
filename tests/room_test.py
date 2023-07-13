@@ -44,3 +44,11 @@ class TestRoom(unittest.TestCase):
     def test_can_pay_entry(self):
         self.room.add_guest(self.guest2)
         self.assertEqual(114, self.guest2.money)
+
+    def test_total_spending(self):
+        self.room.add_guest(self.guest1)
+        self.room.add_guest(self.guest2)
+        self.room.add_guest(self.guest3)
+        self.room.add_guest(self.guest4)
+
+        self.assertEqual(24, self.room.running_total)
