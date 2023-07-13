@@ -22,3 +22,10 @@ class Room:
 
     def get_song(self, song):
         return self._songs[song]
+    
+    def find_song(self, song):
+        for songs in self._songs:
+            if songs.name == song:
+                return True
+            else:
+                return False

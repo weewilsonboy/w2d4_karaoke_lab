@@ -8,12 +8,12 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room = Room("Room 1", 4,6)
         self.song1 = Song("Hallowed Be Thy Name")
-        self.guest1 = Guest("Jon Bon Jovi", 100)
+        self.guest1 = Guest("Jon Bon Jovi", 100, "Dream On")
         self.song2 = Song("Dream On")
-        self.guest2 = Guest("Bruce Dickinson", 120)
-        self.guest3 = Guest("Rob Halford", 6)
-        self.guest4 = Guest("Stu Mackenzie", 25)
-        self.guest5 = Guest("Ozzy Osbourne", 17)
+        self.guest2 = Guest("Bruce Dickinson", 120, "Hallowed Be Thy Name")
+        self.guest3 = Guest("Rob Halford", 6, "Painkiller")
+        self.guest4 = Guest("Stu Mackenzie", 25, "Witchcraft")
+        self.guest5 = Guest("Ozzy Osbourne", 17, "Changes")
 
 
     def test_room_construct(self):
