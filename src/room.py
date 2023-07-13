@@ -5,4 +5,12 @@ class Room:
         self._guests = []
         self._songs = []
 
+    def get_guest(self, number):
+        return self._guests[number]
     
+    def add_guest(self, guest):
+        if len(self._guests) < self.CAPACITY:
+            self._guests.append(guest)
+            return True
+        else:
+            return False
