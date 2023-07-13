@@ -8,9 +8,12 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room = Room("Room 1", 4)
         self.song1 = Song("Hallowed Be Thy Name")
-        self.guest1 = Guest("Jim")
+        self.guest1 = Guest("Jon Bon Jovi")
         self.song2 = Song("Dream On")
         self.guest2 = Guest("Bruce Dickinson")
+        self.guest3 = Guest("Rob Halford")
+        self.guest4 = Guest("Stu Mackenzie")
+        self.guest5 = Guest("Ozzy Osbourne")
 
 
     def test_room_construct(self):
@@ -28,3 +31,12 @@ class TestRoom(unittest.TestCase):
         actual = self.room.get_song(0)
         actual = actual.name
         self.assertEqual(expected, actual)
+
+    def test_too_many_guests(self):
+        self.room.add_guest(self.guest1)
+        self.room.add_guest(self.guest2)
+        self.room.add_guest(self.guest3)
+        self.room.add_guest(self.guest4)
+
+        response = self.room.add_guest(self.guest5)
+        self.assertEqual(False, response)
