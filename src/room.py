@@ -14,3 +14,9 @@ class Room:
             return True
         else:
             return False
+        
+    def add_song(self, song):
+        self._songs.append(song)
+
+    def get_song(self, song):
+        return self._songs[song]

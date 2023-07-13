@@ -21,3 +21,10 @@ class TestRoom(unittest.TestCase):
         expected = self.guest1.name
         actual = self.room.get_guest(0)
         self.assertEqual(expected, actual.name)
+
+    def test_add_song(self):
+        self.room.add_song(self.song1)
+        expected = self.song1.name
+        actual = self.room.get_song(0)
+        actual = actual.name
+        self.assertEqual(expected, actual)
