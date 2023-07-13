@@ -6,14 +6,14 @@ from src.song import Song
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.room = Room("Room 1", 4)
+        self.room = Room("Room 1", 4,6)
         self.song1 = Song("Hallowed Be Thy Name")
-        self.guest1 = Guest("Jon Bon Jovi")
+        self.guest1 = Guest("Jon Bon Jovi", 100)
         self.song2 = Song("Dream On")
-        self.guest2 = Guest("Bruce Dickinson")
-        self.guest3 = Guest("Rob Halford")
-        self.guest4 = Guest("Stu Mackenzie")
-        self.guest5 = Guest("Ozzy Osbourne")
+        self.guest2 = Guest("Bruce Dickinson", 120)
+        self.guest3 = Guest("Rob Halford", 6)
+        self.guest4 = Guest("Stu Mackenzie", 25)
+        self.guest5 = Guest("Ozzy Osbourne", 17)
 
 
     def test_room_construct(self):
@@ -40,3 +40,7 @@ class TestRoom(unittest.TestCase):
 
         response = self.room.add_guest(self.guest5)
         self.assertEqual(False, response)
+
+    def test_can_pay_entry(self):
+        self.room.add_guest(self.guest2)
+        self.assertEqual(114, self.guest2.money)
